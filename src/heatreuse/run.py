@@ -42,7 +42,7 @@ def main():
            "(1) Cost: Manhattan LCOH is $%.0f/MWh against Con Ed steam at $%.0f/MWh, %.1fx the incumbent, so a 0.8x tariff cannot cover cost without large subsidy; Lansing blended phases 1-2 are $%.0f/MWh against propane-equivalent $%.0f/MWh. "
            "(2) Carbon: Site 1 avoids MORE CO2 per MWh delivered (%.3f vs %.3f t/MWh) because steam is a fossil incumbent, so carbon alone does not favour Lansing; Site 1 wins on tonnes per heat-MWh, loses on cost per tonne. "
            "(3) Source: legacy air-side cooling gives ~%d C capture; like-for-like COP %.1f vs %.1f for liquid cooling at Lansing, and a retrofit cannot specify the cooling architecture. "
-           "(4) Competition: the Chelsea UTEN pilot at 85 10th Ave already targets the same NYCHA Fulton Houses, so a second source competes with the utility rather than filling a gap. "
+           "(4) Competition: a Con Edison thermal-network pilot near the same NYCHA housing has been reported but is unverified; if confirmed, a second source would compete with the utility rather than fill a gap. "
            "(5) Leverage: Lansing is a new build with a live ban fight, so heat reuse is a decision-changing concession and liquid cooling can be specified from day one."
            % (f1["lcoh"]["utility_7pct"], steam, ratio, f2["lcoh"]["utility_7pct"], f2["incumbents"]["propane"], co2_1, co2_2,
               cfg1["eng"]["supply"]["capture_temp_c"], cop1["liquid"], cop["liquid"]))

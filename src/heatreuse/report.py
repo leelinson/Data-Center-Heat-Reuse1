@@ -5,7 +5,7 @@ import numpy as np
 from . import weather, scoring, finance
 
 SOURCES = [
-    {"id": "nyserda_prop", "label": "NYSERDA Central NY heating oil / propane prices (propane base $3.10/gal, season range 2.74-3.46; oil $5.186 Central monthly avg)", "url": "https://www.nyserda.ny.gov/Energy-Prices/Home-Heating-Oil/Average-Home-Heating-Oil-Prices"},
+    {"id": "nyserda_prop", "label": "NYSERDA heating oil / propane prices (propane base $3.10/gal is a model assumption; statewide $3.120/gal on 2026-09-21; oil $5.186 Central monthly avg)", "url": "https://www.nyserda.ny.gov/Energy-Prices/Home-Heating-Oil/Average-Home-Heating-Oil-Prices"},
     {"id": "epa_ef", "label": "EPA GHG Emission Factors Hub 2025 (propane 62.87, oil 73.96, gas 53.06 kg CO2/MMBtu; propane corrected per verification 10d)", "url": "https://www.epa.gov/climateleadership/ghg-emission-factors-hub"},
     {"id": "egrid", "label": "EPA eGRID2023 (NYUP 242.8 lb CO2e/MWh; NYCW 865.7)", "url": "https://www.epa.gov/egrid"},
     {"id": "rii", "label": "RII: Colocating Data Centers and Greenhouses, Virginia, June 2025 (1 MWth/ha, 2 acres/MW, jobs Table 2)", "url": "resources/text/Colocating-Data-Centers_Greenhouses-RII-Virginia.txt"},
@@ -160,7 +160,7 @@ def build_site2(cfg, base, with_town, tor, scen, cop, offt, be=None) -> dict:
             dict(lens="Community", petal="Community", claim="Affordable heat for a town without gas", metric="$%.0f/yr per home" % fin["household"]["savings_vs_propane_usd"]),
             dict(lens="Community", petal="Human Health", claim="Replaces propane/oil combustion in homes", metric="%d MWh/yr fossil fuel displaced" % imp["fossil_displaced_MWh"]),
             dict(lens="Ecology", petal="Carbon", claim="Clean upstate grid lifts HP carbon benefit", metric="%d t CO2/yr avoided" % imp["co2_avoided_t_yr"]),
-            dict(lens="Ecology", petal="Nutrients", claim="Closed-loop aquaponics instead of runoff to phosphorus-impaired Cayuga Lake", metric="%d t/yr fish + produce" % imp["food_t"]),
+            dict(lens="Ecology", petal="Nutrients", claim="Closed-loop aquaponics instead of runoff to phosphorus-impaired Cayuga Lake", metric="Design intent; nutrient mass not yet quantified"),
             dict(lens="Ecology", petal="Water", claim="Closed-loop dry cooling stays; no lake-water claim", metric="0 gal/yr claimed; %d MWh/yr fan energy saved" % imp["fan_saved_mwh"]),
             dict(lens="Ecology", petal="Biodiversity", claim="Brownfield reuse; heat to controlled-environment agriculture", metric="%.0f ha greenhouse on former coal site" % cfg["eng"]["onsite"]["greenhouse"]["area_ha"]),
             dict(lens="Health", petal="Air", claim="Fewer combustion appliances in homes", metric="%d homes" % co["units"]),

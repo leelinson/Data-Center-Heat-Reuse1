@@ -75,14 +75,14 @@ export function buildSteps(data: AppData): Step[] {
       id: "fight",
       kicker: "1 · Lansing today",
       headline: "Lansing is about to ban data centers, and most of its heat still comes from delivered fuel",
-      lede: "Free heat was not enough in Lansing, Michigan: a data center that offered it withdrew hours before a council vote, and a moratorium followed. Lansing, New York needs ownership, guarantees and proof.",
+      lede: "Heat reuse alone did not save a data center in Lansing, Michigan: Deep Green withdrew its proposal in April 2026. Lansing, New York needs ownership, guarantees and proof.",
       layout: "split",
-      notes: "Open with the fight, not the technology. Precedent: Deep Green's $120M downtown Lansing, Michigan data center offered free heat to the city utility, was withdrawn on April 6, 2026 hours before the council vote, and Lansing MI then passed a 6-month moratorium. Free heat is not a plan; ownership, a binding agreement and public metering are. On Sept 29, 2026 the Town Board directed its attorney to draft a data-center ban and set aside $500,000 in next year's proposed budget for legal costs. Meanwhile NYSEG has had a gas moratorium here since 2015, so many homes burn propane or oil. Frame: we are not defending the project, we are offering the conditions under which Lansing could say yes.",
+      notes: "Open with the fight, not the technology. Precedent, Lansing, Michigan, not Lansing, New York: Deep Green's 24 MW proposal (more than $120 million) would have sent heat to the city utility's downtown hot-water system. Deep Green withdrew the rezoning application on April 6, 2026, and it is not proceeding. Heat reuse without ownership and a binding contract is not a plan; ownership, a binding agreement and public metering are. On Sept 29, 2026 the Town Board directed its attorney to draft a data-center ban and set aside $500,000 in next year's proposed budget for legal costs. Meanwhile NYSEG invoked a gas moratorium here in February 2015, still described as in effect in a July 2025 filing, so many homes burn propane or oil. Frame: we are not defending the project, we are offering the conditions under which Lansing could say yes.",
       visual: (
         <div className="grid gap-4">
           <Tile big="Sept 29" label="2026: the Town Board directed its attorney to draft a data-center ban, and set aside $500,000 in next year's proposed budget for legal costs" />
-          <Tile tone="teal" big="2015" label="year the NYSEG gas moratorium began. Rural Lansing has no gas pipe." />
-          <Tile big={`$${int(f.incumbent_usd_mwh.propane)}`} unit="per MWh" label={<>what a propane home pays for each MWh of heat (propane ran $2.74 to $3.46 per gallon last season, NYSERDA Central NY). Heating oil: <b className="num">${int(f.incumbent_usd_mwh.heating_oil)}</b>.</>} />
+          <Tile tone="teal" big="2015" label="year the NYSEG gas moratorium began; still in effect per a July 2025 filing. Many rural homes burn propane or oil." />
+          <Tile big={`$${int(f.incumbent_usd_mwh.propane)}`} unit="per MWh" label={<>what a propane home pays for each MWh of heat (model base $3.10 per gallon; NYSERDA statewide average was $3.12 on Sept 21, 2026). Heating oil: <b className="num">${int(f.incumbent_usd_mwh.heating_oil)}</b>.</>} />
         </div>
       ),
     },
