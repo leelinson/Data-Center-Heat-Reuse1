@@ -66,17 +66,30 @@ export function Story({ data }: { data: AppData }) {
   }, [notes]);
 
   useEffect(() => {
+    // On a short screen a step can overflow; scroll it into view before advancing.
+    const scrollStep = (dir: 1 | -1) => {
+      const el = document.querySelector<HTMLElement>("main > section");
+      if (!el) return false;
+      const room = dir > 0 ? el.scrollHeight - el.clientHeight - el.scrollTop : el.scrollTop;
+      if (room <= 4) return false;
+      el.scrollBy({ top: dir * el.clientHeight * 0.8, behavior: calm ? "auto" : "smooth" });
+      return true;
+    };
     const onKey = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (isTyping(e.target)) return;
       const onButton = (e.target as HTMLElement | null)?.tagName === "BUTTON";
       switch (e.key) {
-        case "ArrowRight": case "ArrowDown": case "PageDown":
+        case "ArrowDown": case "PageDown":
+          e.preventDefault(); if (!scrollStep(1)) move(1); break;
+        case "ArrowUp": case "PageUp":
+          e.preventDefault(); if (!scrollStep(-1)) move(-1); break;
+        case "ArrowRight":
           e.preventDefault(); move(1); break;
         case " ":
           if (onButton) return;
           e.preventDefault(); move(e.shiftKey ? -1 : 1); break;
-        case "ArrowLeft": case "ArrowUp": case "PageUp":
+        case "ArrowLeft":
           e.preventDefault(); move(-1); break;
         case "Home": e.preventDefault(); go(0); break;
         case "End": e.preventDefault(); go(steps.length - 1); break;
@@ -90,7 +103,7 @@ export function Story({ data }: { data: AppData }) {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [move, go, steps.length]);
+  }, [move, go, steps.length, calm]);
 
   const s = steps[i];
   const mm = String(Math.floor(secs / 60)).padStart(2, "0");
@@ -115,7 +128,7 @@ export function Story({ data }: { data: AppData }) {
             className="absolute inset-0 overflow-y-auto"
             aria-labelledby="step-h"
           >
-            <div className="min-h-full flex items-center px-[clamp(1.25rem,4vw,4.5rem)] py-5">
+            <div className="min-h-full flex items-center px-[clamp(1.25rem,4vw,4.5rem)] py-5 [@media(max-height:820px)]:py-3">
               {s.full ? (
                 <div className="w-full max-w-[1500px] mx-auto">{s.full}</div>
               ) : s.layout === "split" ? (

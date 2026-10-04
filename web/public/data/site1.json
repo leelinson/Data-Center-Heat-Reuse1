@@ -71,11 +71,11 @@
       "cop": 5.13
     }
   ],
-  "why_not_chosen": "Site 1 is feasible but the weaker proposal for this challenge, and the numbers say so. (1) Cost: Manhattan LCOH is $305/MWh against Con Ed steam at $119/MWh, 2.6x the incumbent, so a 0.8x tariff cannot cover cost without large subsidy; Lansing blended phases 1-2 are $106/MWh against propane-equivalent $136/MWh. (2) Carbon: Site 1 avoids MORE CO2 per MWh delivered (0.353 vs 0.227 t/MWh) because steam is a fossil incumbent, so carbon alone does not favour Lansing; Site 1 wins on tonnes per heat-MWh, loses on cost per tonne. (3) Source: legacy air-side cooling gives ~32 C capture; like-for-like COP 5.1 vs 6.0 for liquid cooling at Lansing, and a retrofit cannot specify the cooling architecture. (4) Competition: the Chelsea UTEN pilot at 85 10th Ave already targets the same NYCHA Fulton Houses, so a second source competes with the utility rather than filling a gap. (5) Leverage: Lansing is a new build with a live ban fight, so heat reuse is a decision-changing concession and liquid cooling can be specified from day one.",
+  "why_not_chosen": "Site 1 is feasible but the weaker proposal for this challenge, and the numbers say so. (1) Cost: Manhattan LCOH is $305/MWh against Con Ed steam at $119/MWh, 2.6x the incumbent, so a 0.8x tariff cannot cover cost without large subsidy; Lansing blended phases 1-2 are $106/MWh against propane-equivalent $136/MWh. (2) Carbon: Site 1 avoids MORE CO2 per MWh delivered (0.353 vs 0.227 t/MWh) because steam is a fossil incumbent, so carbon alone does not favour Lansing; Site 1 wins on tonnes per heat-MWh, loses on cost per tonne. (3) Source: legacy air-side cooling gives ~32 C capture; like-for-like COP 5.1 vs 6.0 for liquid cooling at Lansing, and a retrofit cannot specify the cooling architecture. (4) Competition: a Con Edison thermal-network pilot near the same NYCHA housing has been reported but is unverified; if confirmed, a second source would compete with the utility rather than fill a gap. (5) Leverage: Lansing is a new build with a live ban fight, so heat reuse is a decision-changing concession and liquid cooling can be specified from day one.",
   "sources": [
     {
       "id": "nyserda_prop",
-      "label": "NYSERDA Central NY heating oil / propane prices (propane base $3.10/gal, season range 2.74-3.46; oil $5.186 Central monthly avg)",
+      "label": "NYSERDA heating oil / propane prices (propane base $3.10/gal is a model assumption; statewide $3.120/gal on 2026-09-21; oil $5.186 Central monthly avg)",
       "url": "https://www.nyserda.ny.gov/Energy-Prices/Home-Heating-Oil/Average-Home-Heating-Oil-Prices"
     },
     {

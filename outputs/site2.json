@@ -3085,7 +3085,7 @@
       "lens": "Ecology",
       "petal": "Nutrients",
       "claim": "Closed-loop aquaponics instead of runoff to phosphorus-impaired Cayuga Lake",
-      "metric": "5500 t/yr fish + produce"
+      "metric": "Design intent; nutrient mass not yet quantified"
     },
     {
       "lens": "Ecology",
@@ -3109,7 +3109,7 @@
   "sources": [
     {
       "id": "nyserda_prop",
-      "label": "NYSERDA Central NY heating oil / propane prices (propane base $3.10/gal, season range 2.74-3.46; oil $5.186 Central monthly avg)",
+      "label": "NYSERDA heating oil / propane prices (propane base $3.10/gal is a model assumption; statewide $3.120/gal on 2026-09-21; oil $5.186 Central monthly avg)",
       "url": "https://www.nyserda.ny.gov/Energy-Prices/Home-Heating-Oil/Average-Home-Heating-Oil-Prices"
     },
     {
