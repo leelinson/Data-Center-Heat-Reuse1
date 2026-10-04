@@ -83,7 +83,7 @@ button, [role="button"], a { cursor: pointer; }
   font-family: var(--font-serif);
   font-weight: 700;
   line-height: 1.08;
-  font-size: clamp(2.25rem, 3.7vw + 0.4rem, 4rem); /* 36px - 64px */
+  font-size: clamp(2.25rem, min(3.7vw + 0.4rem, 6.5dvh), 4rem); /* 36px - 64px; height cap keeps 1366x768 steps on one screen */
   color: var(--ink);
   text-wrap: balance;
 }
